@@ -78,6 +78,7 @@ class ApplianceBase {
   AutoconfStatus getAutoconfStatus() const { return this->m_autoconfStatus; }
   void setAutoconf(bool state) { this->m_autoconfStatus = state ? AUTOCONF_PROGRESS : AUTOCONF_DISABLED; }
   static void setLogger(LoggerFn logger) { dudanov::setLogger(logger); }
+  void setNetworkSymbol(bool on);
 
  protected:
   std::vector<OnStateCallback> m_stateCallbacks;
@@ -114,7 +115,6 @@ class ApplianceBase {
     void clear() { this->m_data.clear(); }
   };
   void m_sendNetworkNotify(FrameType msg_type = NETWORK_NOTIFY);
-  void m_setNetworkSymbol(bool on);
   void m_handler(const Frame &frame);
   bool m_isWaitForResponse() const { return this->m_request != nullptr; }
   void m_resetAttempts() { this->m_remainAttempts = this->m_numAttempts; }
