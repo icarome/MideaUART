@@ -184,7 +184,7 @@ void ApplianceBase::m_sendNetworkNotify(FrameType msgType) {
   }
 }
 
-void ApplianceBase::m_setNetworkSymbol(bool on) {
+void ApplianceBase::setNetworkSymbol(bool on) {
   NetworkNotifyData notify{};
   notify.setConnected(on);
   notify.setSignalStrength(4);
