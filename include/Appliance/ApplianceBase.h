@@ -114,6 +114,7 @@ class ApplianceBase {
     void clear() { this->m_data.clear(); }
   };
   void m_sendNetworkNotify(FrameType msg_type = NETWORK_NOTIFY);
+  void ApplianceBase::m_setNetworkSymbol(bool on);
   void m_handler(const Frame &frame);
   bool m_isWaitForResponse() const { return this->m_request != nullptr; }
   void m_resetAttempts() { this->m_remainAttempts = this->m_numAttempts; }
