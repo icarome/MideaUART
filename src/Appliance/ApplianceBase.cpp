@@ -187,7 +187,7 @@ void ApplianceBase::m_sendNetworkNotify(FrameType msgType) {
 void ApplianceBase::setNetworkSymbol(bool on) {
   NetworkNotifyData notify{};
   notify.setConnected(on);
-  notify.setSignalStrength(4);
+  notify.setSignalStrength(random(1,4));
   notify.appendCRC();
   LOG_D(TAG, "Enqueuing a DEVICE_NETWORK(0x0D) notification...");
   this->m_queueNotify(NETWORK_NOTIFY, std::move(notify));
