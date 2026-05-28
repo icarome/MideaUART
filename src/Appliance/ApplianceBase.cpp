@@ -190,7 +190,7 @@ void ApplianceBase::setNetworkSymbol(bool on) {
   notify.setSignalStrength(4);
   notify.appendCRC();
   LOG_D(TAG, "Enqueuing a DEVICE_NETWORK(0x0D) notification...");
-  this->m_queueNotify(msgType, std::move(notify));
+  this->m_queueNotify(NETWORK_NOTIFY, std::move(notify));
 }
 
 void ApplianceBase::m_resetTimeout() {
